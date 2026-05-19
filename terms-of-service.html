@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Cessa</title>
+  <meta name="description" content="Cessa Terms of Service and Community Guidelines." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #1A1008;
+      --surface:  #241509;
+      --surface2: #2C1A0A;
+      --border:   rgba(232, 148, 90, 0.15);
+      --orange:   #E8945A;
+      --gold:     #F5C48A;
+      --text:     #F0E6D3;
+      --muted:    #9C8A72;
+      --dim:      #7A6B58;
+      --green:    #6BC98A;
+      --red:      #E07070;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26, 16, 8, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--orange), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .back-link {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--orange); }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(232,148,90,0.12);
+      border: 1px solid rgba(232,148,90,0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      line-height: 1.2;
+      background: linear-gradient(160deg, var(--text) 50%, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 14px;
+      color: var(--dim);
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .icon { font-size: 18px; }
+
+    .section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .section p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 16px;
+    }
+
+    ul li {
+      color: var(--muted);
+      font-size: 15px;
+      padding: 6px 0 6px 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      opacity: 0.6;
+    }
+
+    ul.do-not li::before { background: var(--red); }
+    ul.do-list li::before { background: var(--green); }
+
+    /* ── Highlight boxes ── */
+    .highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight.warning {
+      border-left-color: var(--red);
+      background: rgba(224, 112, 112, 0.05);
+    }
+
+    .highlight.positive {
+      border-left-color: var(--green);
+    }
+
+    .highlight p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .highlight strong { color: var(--text); font-weight: 600; }
+
+    /* ── Consequence ladder ── */
+    .ladder {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .ladder-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .ladder-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--orange);
+      font-weight: 600;
+      line-height: 1;
+      min-width: 24px;
+    }
+
+    .ladder-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .ladder-text span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .ladder-step.severe {
+      border-color: rgba(224,112,112,0.3);
+    }
+
+    .ladder-step.severe .ladder-num { color: var(--red); }
+
+    /* ── Safety features ── */
+    .safety-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 540px) { .safety-grid { grid-template-columns: 1fr; } }
+
+    .safety-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+
+    .safety-card .s-icon { font-size: 22px; display: block; margin-bottom: 8px; }
+    .safety-card strong { display: block; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+    .safety-card span { font-size: 13px; color: var(--muted); }
+
+    /* ── Quote ── */
+    blockquote {
+      border-left: 3px solid var(--orange);
+      padding: 16px 24px;
+      margin: 24px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--gold);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--dim);
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="wordmark">Cessa</a>
+      <a href="index.html" class="back-link">← Back</a>
+    </div>
+  </nav>
+
+  <article class="page">
+
+    <header class="page-header">
+      <span class="badge">📋 Legal</span>
+      <h1>Terms of Service</h1>
+      <p class="page-meta">Last updated: May 2026 &nbsp;·&nbsp; Applies to Cessa mobile application (iOS &amp; Android)</p>
+    </header>
+
+    <!-- 1. Acceptance -->
+    <section class="section">
+      <h2><span class="icon">✅</span> 1. Acceptance</h2>
+      <p>By creating an account or using Cessa, you agree to be bound by these Terms of Service and our <a href="privacy-policy.html" style="color:var(--orange);text-decoration:none;">Privacy Policy</a>. If you do not agree, please do not use the app.</p>
+    </section>
+
+    <!-- 2. Eligibility -->
+    <section class="section">
+      <h2><span class="icon">🔞</span> 2. Eligibility</h2>
+      <p>You must be <strong>18 years of age or older</strong> to use Cessa. By creating an account, you confirm that you meet this requirement. We may terminate accounts of users we discover are under 18.</p>
+    </section>
+
+    <!-- 3. Your Account -->
+    <section class="section">
+      <h2><span class="icon">🔑</span> 3. Your Account</h2>
+      <ul>
+        <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+        <li>One account per person — multiple accounts may be suspended</li>
+        <li>Pseudonyms are fully supported; impersonation of real individuals is prohibited</li>
+        <li>You must notify us immediately of any unauthorized access to your account</li>
+        <li>We reserve the right to suspend or terminate accounts that violate these Terms</li>
+      </ul>
+    </section>
+
+    <!-- 4. The Service -->
+    <section class="section">
+      <h2><span class="icon">🎙️</span> 4. The Service</h2>
+      <p>Cessa connects users for anonymous, real-time voice conversations focused on mental wellness. The service includes:</p>
+      <ul>
+        <li>AI-powered matching based on topic preferences and language</li>
+        <li>10-minute voice call sessions with curated conversation starters</li>
+        <li>Post-session mood tracking and after-care features</li>
+        <li>Virtual snack icebreakers</li>
+        <li>Premium subscription tier with expanded features</li>
+      </ul>
+
+      <div class="highlight warning">
+        <p><strong>Important:</strong> Cessa is a peer support and connection platform, NOT a substitute for professional mental health services. If you are experiencing a mental health crisis, please contact a qualified professional or your local emergency services immediately.</p>
+      </div>
+    </section>
+
+    <!-- 5. User Conduct -->
+    <section class="section">
+      <h2><span class="icon">🤝</span> 5. User Conduct</h2>
+      <p>By using Cessa, you agree to treat every person you connect with the way you would want to be treated.</p>
+
+      <h3>You agree NOT to:</h3>
+      <ul class="do-not">
+        <li>Harass, threaten, bully, or abuse other users in any way</li>
+        <li>Share personal contact information (phone numbers, social media handles, addresses)</li>
+        <li>Use hate speech, discriminatory language, or explicit sexual content</li>
+        <li>Attempt to identify, locate, or contact users outside of Cessa</li>
+        <li>Use the service for solicitation, promotion, or commercial purposes</li>
+        <li>Create multiple accounts or use automated bots or scripts</li>
+        <li>Record conversations without consent (note: Cessa does not record any calls)</li>
+        <li>Impersonate any person or entity</li>
+        <li>Use the platform while under the influence of substances in a way that impairs behavior</li>
+        <li>Attempt to circumvent any safety or moderation features</li>
+      </ul>
+    </section>
+
+    <!-- 6. Safety Features -->
+    <section class="section">
+      <h2><span class="icon">🛡️</span> 6. Safety Features</h2>
+      <div class="safety-grid">
+        <div class="safety-card">
+          <span class="s-icon">🚨</span>
+          <strong>Panic Button</strong>
+          <span>Instantly end any session you feel unsafe in — no questions asked</span>
+        </div>
+        <div class="safety-card">
+          <span class="s-icon">🚩</span>
+          <strong>Reporting</strong>
+          <span>After any session, tap "No" on the safety check to flag a conversation for review</span>
+        </div>
+        <div class="safety-card">
+          <span class="s-icon">⚡</span>
+          <strong>Auto-Suspension</strong>
+          <span>Users with multiple confirmed reports may be suspended pending review</span>
+        </div>
+        <div class="safety-card">
+          <span class="s-icon">💙</span>
+          <strong>Safe Exit</strong>
+          <span>Crisis resources are surfaced automatically when mood patterns suggest distress</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Subscription & Payments -->
+    <section class="section">
+      <h2><span class="icon">💎</span> 7. Subscription &amp; Payments</h2>
+      <ul>
+        <li><strong>Free tier</strong> — 3 sessions per day, core features included</li>
+        <li><strong>Cessa Premium</strong> — unlimited sessions, priority matching, all soundscapes, and exclusive features</li>
+        <li>Subscriptions renew automatically unless cancelled at least 24 hours before the renewal date</li>
+        <li>Refunds are governed by Apple App Store or Google Play Store policies — we do not process refunds directly</li>
+        <li>Prices are subject to change with advance notice to subscribers</li>
+      </ul>
+    </section>
+
+    <!-- 8. Intellectual Property -->
+    <section class="section">
+      <h2><span class="icon">©️</span> 8. Intellectual Property</h2>
+      <p>All Cessa branding, design, code, content, and trademarks are owned by Andy Cristofer / Cessa App. You may not reproduce, distribute, or create derivative works without explicit written permission.</p>
+      <p>Conversation content belongs to the users who created it. By using Cessa, you grant us no license over your conversation content — we neither record it nor have access to it.</p>
+    </section>
+
+    <!-- 9. Limitation of Liability -->
+    <section class="section">
+      <h2><span class="icon">⚠️</span> 9. Limitation of Liability</h2>
+      <p>Cessa is provided "as is" without warranties of any kind. To the maximum extent permitted by applicable law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the service or from conversations between users.</p>
+      <p>Our total aggregate liability shall not exceed the amount you paid for the service in the 12 months preceding the claim.</p>
+    </section>
+
+    <!-- 10. Termination -->
+    <section class="section">
+      <h2><span class="icon">🚪</span> 10. Termination</h2>
+      <p>You may delete your account at any time from the Profile screen. We may suspend or terminate your account immediately, without prior notice, for violations of these Terms. Upon termination, your right to use the service ceases immediately.</p>
+    </section>
+
+    <!-- 11. Changes -->
+    <section class="section">
+      <h2><span class="icon">📢</span> 11. Changes to These Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of material changes via in-app notification at least 14 days before they take effect. Continued use of the app after changes are in effect constitutes acceptance of the updated Terms.</p>
+    </section>
+
+    <!-- 12. Governing Law -->
+    <section class="section">
+      <h2><span class="icon">🌏</span> 12. Governing Law</h2>
+      <p>These Terms are governed by the laws of the Republic of Indonesia. Disputes shall be resolved through good-faith negotiation first, and if unresolved, through the competent courts of Indonesia.</p>
+    </section>
+
+    <!-- 13. Contact -->
+    <section class="section">
+      <h2><span class="icon">✉️</span> 13. Contact</h2>
+      <div class="highlight">
+        <p>
+          <strong>Support &amp; legal inquiries:</strong><br />
+          Andy Cristofer — Cessa<br />
+          <a href="mailto:cessahearth@gmail.com" style="color:var(--orange);text-decoration:none;">cessahearth@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div style="border-top:1px solid var(--border);margin:64px 0 56px;"></div>
+
+    <!-- Community Guidelines -->
+    <header style="margin-bottom:48px;">
+      <span class="badge">💛 Community</span>
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:600;margin-top:16px;background:linear-gradient(160deg,var(--text) 50%,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Community Guidelines</h1>
+      <p style="font-size:15px;color:var(--muted);margin-top:8px;font-style:italic;">Your safe space, our shared responsibility.</p>
+    </header>
+
+    <section class="section">
+      <h2><span class="icon">🔥</span> Our Promise</h2>
+      <p>Cessa is built on one belief: <strong style="color:var(--text);">everyone deserves to be heard.</strong> These guidelines protect that space for all of us.</p>
+      <blockquote>"The fire inside you is not meant to burn alone."</blockquote>
+    </section>
+
+    <section class="section">
+      <h2><span class="icon">💛</span> Be Kind</h2>
+      <ul class="do-list">
+        <li>Treat every person with respect and genuine empathy</li>
+        <li>Remember: the voice on the other end belongs to a real person with real feelings</li>
+        <li>If you disagree with something, express it gently — you don't have to agree on everything to connect</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><span class="icon">🎯</span> Be Present</h2>
+      <ul class="do-list">
+        <li>Give your full attention during sessions — put your other apps away</li>
+        <li>Listen as much as you speak</li>
+        <li>The conversation starters are guides, not scripts — follow where the conversation naturally flows</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><span class="icon">🔒</span> Be Safe</h2>
+      <ul class="do-list">
+        <li>Never share your personal information: real name, phone number, address, or social media</li>
+        <li>Never ask for personal information from your conversation partner</li>
+        <li>If something makes you uncomfortable, use the Panic Button immediately — no explanation needed</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><span class="icon">🚫</span> Never</h2>
+      <ul class="do-not">
+        <li>Use hateful, discriminatory, racist, sexist, or homophobic language</li>
+        <li>Harass, bully, stalk, or threaten anyone — inside or outside the app</li>
+        <li>Share sexual, violent, or graphic content</li>
+        <li>Attempt to meet or contact users outside of Cessa</li>
+        <li>Record, screenshot, or share any part of a conversation</li>
+        <li>Use the platform for self-promotion, sales, or recruitment</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><span class="icon">⚡</span> Consequences</h2>
+      <div class="ladder">
+        <div class="ladder-step">
+          <span class="ladder-num">1</span>
+          <div class="ladder-text">
+            <strong>First violation</strong>
+            <span>Formal warning — you'll be notified and reminded of the guidelines</span>
+          </div>
+        </div>
+        <div class="ladder-step">
+          <span class="ladder-num">2</span>
+          <div class="ladder-text">
+            <strong>Second violation</strong>
+            <span>48-hour account suspension</span>
+          </div>
+        </div>
+        <div class="ladder-step">
+          <span class="ladder-num">3</span>
+          <div class="ladder-text">
+            <strong>Third violation</strong>
+            <span>Permanent account ban</span>
+          </div>
+        </div>
+        <div class="ladder-step severe">
+          <span class="ladder-num">!</span>
+          <div class="ladder-text">
+            <strong>Severe violations</strong>
+            <span>Threats, harassment, or explicit content — immediate and permanent ban with no warning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="icon">🆘</span> If You Need Help</h2>
+      <div class="highlight positive">
+        <ul style="margin:0;">
+          <li style="border:none;padding-bottom:8px;"><strong style="color:var(--text);">In-app:</strong> Use the Panic Button to end any session instantly, no explanation needed</li>
+          <li style="border:none;padding-bottom:8px;"><strong style="color:var(--text);">Report:</strong> After a session, tap "No" on the safety check to flag the conversation for review</li>
+          <li style="border:none;padding-bottom:0;"><strong style="color:var(--text);">Crisis:</strong> If you or someone you're talking to is in immediate danger, contact your local emergency services</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <p style="color:var(--muted);font-size:15px;">Every time you show up with kindness, you make Cessa safer for someone who really needs it. Thank you for being part of this community.</p>
+    </section>
+
+  </article>
+
+  <footer>
+    <p>
+      &copy; 2026 Cessa &mdash; Andy Cristofer<br />
+      <a href="index.html">← Back to Legal Hub</a> &nbsp;·&nbsp;
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </footer>
+
+</body>
+</html>

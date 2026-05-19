@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Cessa</title>
+  <meta name="description" content="Cessa Privacy Policy — how we collect, use, and protect your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #1A1008;
+      --surface:  #241509;
+      --surface2: #2C1A0A;
+      --border:   rgba(232, 148, 90, 0.15);
+      --orange:   #E8945A;
+      --gold:     #F5C48A;
+      --text:     #F0E6D3;
+      --muted:    #9C8A72;
+      --dim:      #7A6B58;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26, 16, 8, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--orange), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .back-link {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--orange); }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(232,148,90,0.12);
+      border: 1px solid rgba(232,148,90,0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      line-height: 1.2;
+      background: linear-gradient(160deg, var(--text) 50%, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 14px;
+      color: var(--dim);
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .icon {
+      font-size: 18px;
+    }
+
+    .section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .section p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 16px;
+    }
+
+    ul li {
+      color: var(--muted);
+      font-size: 15px;
+      padding: 6px 0 6px 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      opacity: 0.6;
+    }
+
+    /* ── Highlight boxes ── */
+    .highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight.positive {
+      border-left-color: #6BC98A;
+    }
+
+    .highlight p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .highlight strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── Table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      color: var(--orange);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .tag {
+      display: inline-block;
+      background: rgba(232,148,90,0.12);
+      border: 1px solid rgba(232,148,90,0.2);
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--dim);
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .data-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="wordmark">Cessa</a>
+      <a href="index.html" class="back-link">← Back</a>
+    </div>
+  </nav>
+
+  <article class="page">
+
+    <header class="page-header">
+      <span class="badge">🔒 Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="page-meta">Last updated: May 2026 &nbsp;·&nbsp; Applies to Cessa mobile application</p>
+    </header>
+
+    <!-- Overview -->
+    <section class="section">
+      <h2><span class="icon">👋</span> Overview</h2>
+      <p>Cessa ("we", "our", or "the app") is committed to protecting your privacy. This policy explains exactly what data we collect, why we collect it, and the rights you hold over it.</p>
+      <div class="highlight positive">
+        <p><strong>Our commitment:</strong> We collect only what is necessary to connect you with another human being. We do not sell your data. We do not record your voice calls. We do not share your information with third-party advertisers.</p>
+      </div>
+    </section>
+
+    <!-- Data We Collect -->
+    <section class="section">
+      <h2><span class="icon">📦</span> Data We Collect</h2>
+
+      <h3>Account Data</h3>
+      <ul>
+        <li>Email address (required for authentication)</li>
+        <li>Display name — pseudonyms are fully supported</li>
+        <li>Language preference</li>
+        <li>Topic preferences (e.g., "Loneliness", "Career", "Relationships")</li>
+      </ul>
+
+      <h3>Usage Data</h3>
+      <ul>
+        <li>Session history: partner display name, call duration, timestamp</li>
+        <li>Mood logs: a 1–5 rating you provide after each session</li>
+        <li>Safety check responses (Yes / No after each session)</li>
+        <li>Streak count and engagement metrics</li>
+      </ul>
+
+      <h3>Data We Do NOT Collect</h3>
+      <div class="highlight positive">
+        <ul style="margin:0;">
+          <li>Your real name — your pseudonym is sufficient</li>
+          <li>Photos or profile pictures</li>
+          <li>Precise or approximate location data</li>
+          <li><strong>Voice call content — calls are real-time only and never recorded or stored</strong></li>
+          <li>Contact lists or social media accounts</li>
+          <li>Device microphone access outside of active calls</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How We Use Your Data -->
+    <section class="section">
+      <h2><span class="icon">⚙️</span> How We Use Your Data</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Purpose</th>
+            <th>Data Used</th>
+            <th>Legal Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Matching you with a compatible conversation partner</td>
+            <td>Language, topic preferences</td>
+            <td><span class="tag">Consent</span></td>
+          </tr>
+          <tr>
+            <td>AI-generated conversation starters and compatibility insights</td>
+            <td>Topic preferences only — no personal identifiers</td>
+            <td><span class="tag">Consent</span></td>
+          </tr>
+          <tr>
+            <td>Crisis detection and surfacing professional resources</td>
+            <td>Mood log patterns</td>
+            <td><span class="tag">Vital Interest</span></td>
+          </tr>
+          <tr>
+            <td>Product improvement and bug fixing</td>
+            <td>Aggregated, anonymized usage statistics</td>
+            <td><span class="tag">Legitimate Interest</span></td>
+          </tr>
+          <tr>
+            <td>Account security and fraud prevention</td>
+            <td>Email, session metadata</td>
+            <td><span class="tag">Legitimate Interest</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Data Storage & Security -->
+    <section class="section">
+      <h2><span class="icon">🛡️</span> Data Storage &amp; Security</h2>
+      <p>All data is stored on <strong>Supabase</strong> (PostgreSQL) servers located in the <strong>United States</strong>, protected by Row-Level Security policies that ensure you can only access your own data.</p>
+      <ul>
+        <li>Authentication uses OAuth 2.0 and JWT (industry-standard protocols)</li>
+        <li>All data in transit is encrypted via HTTPS / TLS 1.2+</li>
+        <li>Biometric authentication (Face ID / Fingerprint) is processed entirely on your device — this data never reaches our servers</li>
+        <li>We conduct periodic security reviews and follow responsible disclosure practices</li>
+      </ul>
+    </section>
+
+    <!-- Data Retention -->
+    <section class="section">
+      <h2><span class="icon">🗓️</span> Data Retention</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Retention Period</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Active account data</td>
+            <td>Retained while your account is active</td>
+          </tr>
+          <tr>
+            <td>Session history</td>
+            <td>90 days, then permanently deleted</td>
+          </tr>
+          <tr>
+            <td>Mood logs</td>
+            <td>1 year, then permanently deleted</td>
+          </tr>
+          <tr>
+            <td>Safety reports</td>
+            <td>2 years (safety compliance requirement)</td>
+          </tr>
+          <tr>
+            <td>Deleted accounts</td>
+            <td>All data permanently erased within 30 days of deletion request</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Your Rights -->
+    <section class="section">
+      <h2><span class="icon">⚖️</span> Your Rights</h2>
+      <p>Regardless of where you live, you have the following rights:</p>
+      <ul>
+        <li><strong>Access</strong> — view all data we hold about you via the Profile screen</li>
+        <li><strong>Portability</strong> — request a machine-readable export of your data by contacting us</li>
+        <li><strong>Correction</strong> — update incorrect account data at any time in-app</li>
+        <li><strong>Deletion</strong> — delete your account and all associated data from the Profile screen</li>
+        <li><strong>Opt out</strong> — disable AI-powered features by contacting support</li>
+        <li><strong>Withdraw consent</strong> — you may withdraw consent at any time; this will not affect processing that occurred before withdrawal</li>
+      </ul>
+
+      <h3>GDPR (European Users)</h3>
+      <p>For users in the European Economic Area, the legal basis for processing is your consent given at signup. You may lodge a complaint with your local supervisory authority. Our Data Controller is Andy Cristofer, reachable at <a href="mailto:cessahearth@gmail.com" style="color:var(--orange);text-decoration:none;">cessahearth@gmail.com</a>.</p>
+
+      <h3>Indonesia UU PDP</h3>
+      <p>For users in Indonesia, we comply with Undang-Undang Perlindungan Data Pribadi (UU PDP). You have the right to access, correct, and request deletion of your personal data. Contact us to exercise these rights.</p>
+    </section>
+
+    <!-- Third-Party Services -->
+    <section class="section">
+      <h2><span class="icon">🔗</span> Third-Party Services</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Data Shared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supabase</td>
+            <td>Database &amp; authentication</td>
+            <td>Account and usage data (stored here)</td>
+          </tr>
+          <tr>
+            <td>Agora.io</td>
+            <td>Real-time voice communication</td>
+            <td>In-transit audio only — not recorded or stored</td>
+          </tr>
+          <tr>
+            <td>Anthropic Claude API</td>
+            <td>AI matching &amp; conversation insights</td>
+            <td>Topic preferences only — no personal identifiers</td>
+          </tr>
+          <tr>
+            <td>RevenueCat</td>
+            <td>Subscription management</td>
+            <td>Purchase tokens (handled by App Store / Google Play)</td>
+          </tr>
+          <tr>
+            <td>Sentry</td>
+            <td>Crash and error reporting</td>
+            <td>Anonymized error stack traces</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Children's Privacy -->
+    <section class="section">
+      <h2><span class="icon">🧒</span> Children's Privacy</h2>
+      <p>Cessa is intended exclusively for users <strong>18 years of age and older</strong>. We do not knowingly collect personal data from minors. If we discover that an account belongs to a person under 18, that account will be terminated and all associated data deleted immediately.</p>
+    </section>
+
+    <!-- Changes -->
+    <section class="section">
+      <h2><span class="icon">📢</span> Changes to This Policy</h2>
+      <p>We will notify you of material changes via in-app notification at least 14 days before they take effect. Continued use of the app after changes are in effect constitutes your acceptance of the updated policy.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="section">
+      <h2><span class="icon">✉️</span> Contact</h2>
+      <div class="highlight">
+        <p>
+          <strong>Privacy inquiries:</strong><br />
+          Andy Cristofer — Cessa<br />
+          <a href="mailto:cessahearth@gmail.com" style="color:var(--orange);text-decoration:none;">cessahearth@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+  </article>
+
+  <footer>
+    <p>
+      &copy; 2026 Cessa &mdash; Andy Cristofer<br />
+      <a href="index.html">← Back to Legal Hub</a> &nbsp;·&nbsp;
+      <a href="terms-of-service.html">Terms of Service</a>
+    </p>
+  </footer>
+
+</body>
+</html>
