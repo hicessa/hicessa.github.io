@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Cessa</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep:    #12100e;
+      --bg-surface: #1c1814;
+      --bg-card:    #241f19;
+      --border:     #332b22;
+      --ember:      #e07a3a;
+      --ember-soft: #c96b2e;
+      --ember-glow: rgba(224, 122, 58, 0.12);
+      --text-primary:   #f0e6d8;
+      --text-secondary: #b8a898;
+      --text-muted:     #7a6e64;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e07a3a 0%, #c05020 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.3px;
+    }
+
+    .logo-text span {
+      color: var(--ember);
+    }
+
+    nav-link {
+      margin-left: auto;
+    }
+
+    .nav-link {
+      margin-left: auto;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--ember);
+      border-color: var(--ember-soft);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 64px 24px 48px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .page-badge {
+      display: inline-block;
+      background: var(--ember-glow);
+      border: 1px solid rgba(224, 122, 58, 0.3);
+      color: var(--ember);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--ember);
+    }
+
+    .hero .subtitle {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .last-updated {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ── Layout ── */
+    .content-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      padding: 20px 28px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--ember-glow);
+      border: 1px solid rgba(224, 122, 58, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.2px;
+    }
+
+    .section-body {
+      padding: 24px 28px;
+    }
+
+    .section-body p {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* ── Sub-sections ── */
+    .subsection {
+      margin-bottom: 20px;
+    }
+
+    .subsection:last-child { margin-bottom: 0; }
+
+    .subsection h3 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ember);
+      margin-bottom: 10px;
+    }
+
+    /* ── Lists ── */
+    ul, ol {
+      padding-left: 20px;
+      color: var(--text-secondary);
+    }
+
+    ul li, ol li {
+      margin-bottom: 6px;
+    }
+
+    ul li::marker {
+      color: var(--ember-soft);
+    }
+
+    /* ── Highlight items (bold label + desc) ── */
+    .highlight-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .highlight-list li {
+      display: flex;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .highlight-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .highlight-list li:first-child { padding-top: 0; }
+
+    .highlight-list li strong {
+      color: var(--text-primary);
+      flex-shrink: 0;
+      min-width: 130px;
+    }
+
+    /* ── Not collected badge ── */
+    .not-collected {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(34, 197, 94, 0.06);
+      border: 1px solid rgba(34, 197, 94, 0.18);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    .not-collected .nc-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .not-collected div {
+      color: #86efac;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .not-collected div strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* ── Retention table ── */
+    .retention-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .retention-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: var(--bg-surface);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .retention-row .label {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .retention-row .value {
+      color: var(--ember);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ── Third party grid ── */
+    .provider-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .provider-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .provider-card .provider-name {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .provider-card .provider-desc {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* ── Contact block ── */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .contact-row:first-child { padding-top: 0; }
+
+    .contact-row .contact-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      min-width: 120px;
+    }
+
+    .contact-row a {
+      color: var(--ember);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ── Warning / disclaimer block ── */
+    .info-block {
+      display: flex;
+      gap: 12px;
+      background: var(--ember-glow);
+      border: 1px solid rgba(224, 122, 58, 0.25);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .info-block .ib-icon { font-size: 18px; flex-shrink: 0; }
+
+    .info-block .ib-body {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .info-block .ib-body strong {
+      color: var(--ember);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--ember); }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--ember); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .section-body { padding: 18px 18px; }
+      .section-header { padding: 16px 18px 14px; }
+      .highlight-list li strong { min-width: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-mark">🔥</div>
+    <div class="logo-text">Ce<span>ssa</span></div>
+    <a class="nav-link" href="/terms/">Terms of Service →</a>
+  </header>
+
+  <div class="hero">
+    <div class="page-badge">Legal</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="subtitle">Your story stays yours. Here's exactly what we collect, and what we don't.</p>
+    <span class="last-updated">Last updated: January 2026</span>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- Overview -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">💬</div>
+        <h2>Overview</h2>
+      </div>
+      <div class="section-body">
+        <p>Cessa ("we", "our", "the app") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding that data.</p>
+      </div>
+    </div>
+
+    <!-- Data We Collect -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🗂️</div>
+        <h2>Data We Collect</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="subsection">
+          <h3>Account Data</h3>
+          <ul>
+            <li>Email address (for authentication)</li>
+            <li>Display name (pseudonym allowed)</li>
+            <li>Language preference</li>
+            <li>Topic preferences (e.g., "Loneliness", "Career")</li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h3>Usage Data</h3>
+          <ul>
+            <li>Session history (partner name, duration, timestamp)</li>
+            <li>Mood logs (1–5 scale after each session)</li>
+            <li>Safety ratings (Yes/No after each session)</li>
+            <li>Streak count</li>
+          </ul>
+        </div>
+
+        <div class="not-collected">
+          <div class="nc-icon">✅</div>
+          <div>
+            <strong>Data We Do NOT Collect</strong>
+            Real name · Photos or profile pictures · Location data · Voice recordings (calls are real-time only, not stored unless a report is filed) · Contact lists or social media accounts
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- How We Use -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚙️</div>
+        <h2>How We Use Your Data</h2>
+      </div>
+      <div class="section-body">
+        <ul class="highlight-list">
+          <li><strong>Matching</strong> Language and topic preferences help us find compatible partners.</li>
+          <li><strong>AI Features</strong> Topic preferences are sent to our AI system to generate compatibility insights and personalized questions. No personal data is included.</li>
+          <li><strong>Safety</strong> Mood patterns are analyzed to detect potential crises and offer professional help resources.</li>
+          <li><strong>Product Improvement</strong> Aggregated, anonymized usage statistics.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Storage & Security -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔒</div>
+        <h2>Data Storage &amp; Security</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li>All data is stored in Supabase (PostgreSQL) with Row-Level Security</li>
+          <li>Authentication uses industry-standard protocols (OAuth 2.0, JWT)</li>
+          <li>Biometric data (Face ID / Fingerprint) is processed locally on your device and <strong>NEVER</strong> sent to our servers</li>
+          <li>Journal content and chat messages are encrypted at rest</li>
+          <li>We use HTTPS/TLS for all data transmission</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Retention -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🕐</div>
+        <h2>Data Retention</h2>
+      </div>
+      <div class="section-body">
+        <div class="retention-grid">
+          <div class="retention-row">
+            <span class="label">Active accounts</span>
+            <span class="value">While account is active</span>
+          </div>
+          <div class="retention-row">
+            <span class="label">Session data</span>
+            <span class="value">90 days</span>
+          </div>
+          <div class="retention-row">
+            <span class="label">Mood logs</span>
+            <span class="value">1 year</span>
+          </div>
+          <div class="retention-row">
+            <span class="label">Reports</span>
+            <span class="value">2 years (safety compliance)</span>
+          </div>
+          <div class="retention-row">
+            <span class="label">Deleted accounts</span>
+            <span class="value">Erased within 30 days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your Rights -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🛡️</div>
+        <h2>Your Rights</h2>
+      </div>
+      <div class="section-body">
+        <ul class="highlight-list">
+          <li><strong>Access</strong> Your data at any time via the Profile screen.</li>
+          <li><strong>Export</strong> Your data by contacting support@cessaapp.com.</li>
+          <li><strong>Delete</strong> Your account and all associated data.</li>
+          <li><strong>Opt out</strong> Of AI features (contact support).</li>
+          <li><strong>Withdraw consent</strong> At any time.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Third-Party Services -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔗</div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <div class="section-body">
+        <div class="provider-grid">
+          <div class="provider-card">
+            <div class="provider-name">Supabase</div>
+            <div class="provider-desc">Database and authentication (EU/US data centers)</div>
+          </div>
+          <div class="provider-card">
+            <div class="provider-name">Agora.io</div>
+            <div class="provider-desc">Real-time voice communication (data processed in-transit, not stored)</div>
+          </div>
+          <div class="provider-card">
+            <div class="provider-name">Anthropic Claude API</div>
+            <div class="provider-desc">AI-powered matching insights (no personal data sent, only topic preferences)</div>
+          </div>
+          <div class="provider-card">
+            <div class="provider-name">RevenueCat</div>
+            <div class="provider-desc">Subscription management</div>
+          </div>
+          <div class="provider-card">
+            <div class="provider-name">Sentry</div>
+            <div class="provider-desc">Error tracking (no personal data included)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Children's Privacy -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔞</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <div class="section-body">
+        <p>Cessa is not intended for anyone under 18 years of age. We do not knowingly collect data from minors. If we discover that a user is under 18, their account will be terminated immediately.</p>
+      </div>
+    </div>
+
+    <!-- GDPR -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🇪🇺</div>
+        <h2>GDPR Compliance</h2>
+      </div>
+      <div class="section-body">
+        <p style="margin-bottom:16px;">For users in the European Economic Area:</p>
+        <ul class="highlight-list">
+          <li><strong>Legal basis</strong> Consent (you agree to this policy on signup).</li>
+          <li><strong>Data Controller</strong> Cessa App / Andy Cristofer.</li>
+          <li><strong>Contact</strong> privacy@cessaapp.com</li>
+          <li><strong>Complaints</strong> You may lodge a complaint with your local supervisory authority.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Changes -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📢</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <div class="section-body">
+        <p>We will notify you of significant changes via in-app notification. Continued use after changes constitutes acceptance.</p>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✉️</div>
+        <h2>Contact</h2>
+      </div>
+      <div class="section-body">
+        <div class="contact-row">
+          <span class="contact-label">Privacy concerns</span>
+          <a href="mailto:privacy@cessaapp.com">privacy@cessaapp.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">General support</span>
+          <a href="mailto:support@cessaapp.com">support@cessaapp.com</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Ce<span>ssa</span></div>
+      <div class="footer-tagline">The fire inside you is not meant to burn alone.</div>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="mailto:support@cessaapp.com">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 Cessa App / Andy Cristofer. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
